@@ -8,14 +8,17 @@
     background: white;
 }
   
-  .left-section {
-    flex: 1;
-    padding-left: 60px;
-    padding-right: 60px;
-    padding-top:50px;
-    background: #fff;
-  }
-  
+.left-section {
+  flex: 1;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-top: 50px;
+  background: #fff;
+  overflow-y: auto;
+  max-height: calc(100vh - 80px);
+  padding-bottom: 20px;
+}
+
   .right-section {
     flex: 1;
     background: #003b46;
@@ -31,6 +34,8 @@
     display: flex;
     flex-direction: column;
     margin-top: 30px;
+    gap:4px;
+    width: 100%
   }
   
   input {
@@ -50,9 +55,12 @@
   }
   .terms {
     display: flex;
+    gap: 12px;
   }
   .social-login {
+    margin-top: 20px;
     display: flex;
+    justify-content: center;
     gap: 10px;
   }
   

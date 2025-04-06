@@ -1,33 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles/Signup.css"; // Import the CSS file for styling
+import Sign_up_first from "./components/sign_up_first";
+import Sign_up_second from "./components/sign_up_second";
+import Investor from "./components/investor";
+import Client from "./components/client";
 
 const Signup = () => {
+  const [first_page, setFirstPage] = useState(true);
+  const [second_page,setSecondPage] = useState(false);
+  const [investor,setInvestor] = useState(false);
+  const [client,setClient] = useState(false);
+  const handleclick = ()=>{
+    setFirstPage(false);
+    setSecondPage(true);
+  }
+  const back = ()=>{
+    setFirstPage(true);
+    setSecondPage(false);
+  }
   return (
     <div className="container">
       <div className="left-section">
-        <center><h1>Create an account</h1></center>
-        <form>
-          <label>Name</label>
-          <input type="text" placeholder="Enter your name" />
-
-          <label>Email</label>
-          <input type="email" placeholder="Enter your email" />
-
-          <label>Password</label>
-          <input type="password" placeholder="Enter your password" />
-
-          <div className="terms">
-            <div><input type="checkbox" id="terms" /></div>
-            <label htmlFor="terms">I agree to all the Terms & Conditions</label>
-          </div>
-
-          <button type="submit">Sign up</button>
-        </form>
-        <div className="social-login">
-          <button className="google">Google</button>
-          <button className="facebook">Facebook</button>
-        </div>
-        <p>Already have an account? <a href="#">Log in</a></p>
+        {first_page && <Sign_up_first handleclick={handleclick}/>}
+        {second_page && <Sign_up_second Investor={()=>{setInvestor(true);setSecondPage(false)}} goBack={back} Client={()=>{setSecondPage(false);setClient(true)}}/>}
+        {investor && <Investor goBack={()=>{setInvestor(false);setSecondPage(true)}}/>}
+        {client && <Client goBack={()=>{setClient(false);setSecondPage(true)}}/>}
       </div>
       <div className="right-section">
         <div className="analytics">
