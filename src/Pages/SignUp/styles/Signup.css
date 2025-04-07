@@ -34,7 +34,7 @@
     display: flex;
     flex-direction: column;
     margin-top: 30px;
-    gap:4px;
+    gap:8px;
     width: 100%
   }
   
@@ -77,4 +77,17 @@
     padding: 20px;
     border-radius: 10px;
   }
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998; 
+    backdrop-filter: blur(5px);
+  }
   
+  .modal {
+    z-index: 999;
+  }

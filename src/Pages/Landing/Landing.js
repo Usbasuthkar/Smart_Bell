@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import Header from './Components/Header';
 import About from "./Components/About";
-import Footer from "../../Components/Footer";
 
 export default function Landing() {
     const [isVisible, setIsVisible] = useState(false);
@@ -40,7 +39,6 @@ export default function Landing() {
                 </div>
             </div>
             <About />
-            <Footer />
         </div>
     );
 }

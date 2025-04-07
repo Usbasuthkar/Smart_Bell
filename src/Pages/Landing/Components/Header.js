@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <nav className="navbar">
       <div className="brand">
-        <a href="/"><img src='logo_only_transparent.png'/></a>
+        <a href="/"><img src='logo_only_transparent.png' alt="Brand"/></a>
       </div>
       <ul className={`nav-links ${isMobile ? 'mobile' : ''}`}>
         <li><Link to="/login">Login</Link></li>

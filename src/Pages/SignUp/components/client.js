@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
-export default function Client({ goBack }) {
+export default function Client({ goBack,email }) {
     const [clientData, setClientData] = useState({
         role: '',
         companyName: '',
@@ -23,7 +23,7 @@ export default function Client({ goBack }) {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('Client Data:', clientData);
-        // Add logic to handle form submission
+        // Add logic to handle form submission, like making an API call
     };
 
     return (
@@ -39,6 +39,7 @@ export default function Client({ goBack }) {
                 <div>
                     <label>Role / Title</label>
                     <input
+                        required
                         type="text"
                         name="role"
                         value={clientData.role}
@@ -50,6 +51,7 @@ export default function Client({ goBack }) {
                 <div>
                     <label>Company / Startup Name</label>
                     <input
+                        required
                         type="text"
                         name="companyName"
                         value={clientData.companyName}
@@ -58,9 +60,9 @@ export default function Client({ goBack }) {
                     />
                 </div>
 
-                <div style={{display:'flex',gap:'10px',marginBottom:'10px'}}>
+                <div style={{ display: 'flex', gap: '10px', marginBottom: '10px' }}>
                     <label>Industry / Field</label>
-                    <select name="industry" value={clientData.industry} onChange={handleChange}>
+                    <select style={{fontSize:'0.7em'}} required name="industry" value={clientData.industry} onChange={handleChange}>
                         <option value="">Select an industry</option>
                         <option value="tech">Tech</option>
                         <option value="health">Health</option>
@@ -71,9 +73,9 @@ export default function Client({ goBack }) {
                     </select>
                 </div>
 
-                <div style={{display:'flex',gap:'10px',marginBottom:'10px'}}>
+                <div style={{ display: 'flex', gap: '10px', marginBottom: '10px' }}>
                     <label>Experience Level</label>
-                    <select name="experienceLevel" value={clientData.experienceLevel} onChange={handleChange}>
+                    <select style={{fontSize:'0.7em'}} required name="experienceLevel" value={clientData.experienceLevel} onChange={handleChange}>
                         <option value="">Select experience level</option>
                         <option value="beginner">Beginner</option>
                         <option value="intermediate">Intermediate</option>
@@ -84,6 +86,7 @@ export default function Client({ goBack }) {
                 <div>
                     <label>LinkedIn Profile URL</label>
                     <input
+                        required
                         type="url"
                         name="linkedinProfile"
                         value={clientData.linkedinProfile}

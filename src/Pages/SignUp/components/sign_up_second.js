@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
-export default function Sign_up_second({goBack,Investor,Client}){
+export default function Signupsecond({goBack,Investor,Client}){
     return(
         <div>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
